@@ -1,10 +1,11 @@
 import os
 import time
 import json
+import core.functions as cmd
 
 import core.android_api as android_api
 
-class Converter:
+class Core:
     def __init__(self, led, ledf, hid, hid_type):
         self.led = led
         self.ledf = ledf
@@ -21,11 +22,11 @@ class Converter:
         with open(file) as f:
             for line in f:
                 line = line.strip().split()
-                try:
-                    self.Executer(line)
-                except:
-                    print(f"Unsupported command: {line} ")
-                    pass
+                # try:
+                self.Executer(line)
+                # except:
+                #     print(f"Unsupported command: {line} ")
+                #     pass
 
     
     ########################
@@ -63,21 +64,10 @@ class Converter:
 
         elif line[0] == "STRING":
             line = " ".join(line[1:])
-            for letter in line:
-                time.sleep(self.default_write_delay)
-                if letter.isupper():
-                    print(f'echo "left-shift {letter.lower()}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                    # os.popen(f'echo "left-shift {letter.lower()}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                elif letter.islower():
-                    print(f'echo "{letter}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                    # os.popen(f'echo "{letter}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                elif letter.isnumeric():
-                    print(f'echo "{letter}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                    # os.popen(f'echo "{letter}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                else:
-                    symbol = self.Convert(letter)
-                    print(f'echo "{symbol}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-                    # os.popen(f'echo "{symbol}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
+            cmd.STRING(line, self.default_write_delay)
+            
+            
+
         elif line[0] == "STRINGLN":
             pass
         elif line[0] == "LED_ON":
@@ -100,18 +90,6 @@ class Converter:
     #########################
     #    Layout Converter   #
     #########################
-    def Convert(self, letter):
-        letter = str(letter)
-        with open('layouts/us.json') as f:
-            data = json.load(f)
-            symbols = data["SYMBOLS"]
-            special = data["SPECIAL"]
-
-            if letter in symbols:
-                value = symbols[letter]
-                return value
-            elif letter in special:
-                value = special[letter]
-                return value
+    
             
         
