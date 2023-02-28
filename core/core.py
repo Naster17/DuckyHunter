@@ -5,11 +5,12 @@ import json
 import core.android_api as android_api
 
 class Converter:
-    def __init__(self):
-        self.led = "/sys/class/leds/red/brightness"
-        self.ledf = "/sys/class/leds/flashlight/brightness"
-        self.hid = "/dev/hidg0"
-        self.hid_type = "keyboard"
+    def __init__(self, led, ledf, hid, hid_type):
+        self.led = led
+        self.ledf = ledf
+        self.hid = hid
+        self.hid_type = hid_type
+        # DELAY times
         self.default_delay = 0.01
         self.default_write_delay = 0.02
 
@@ -25,6 +26,7 @@ class Converter:
                 except:
                     print(f"Unsupported command: {line} ")
                     pass
+
     
     ########################
     #       Executer       #
@@ -49,7 +51,6 @@ class Converter:
             print(f'echo "enter" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
             # os.popen(f'echo "enter" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
 
-    
 
         elif line[0] == "GUI":
             try:
@@ -77,7 +78,8 @@ class Converter:
                     symbol = self.Convert(letter)
                     print(f'echo "{symbol}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
                     # os.popen(f'echo "{symbol}" | ./hid-keyboard {self.hid} {self.hid_type} > /dev/null')
-        
+        elif line[0] == "STRINGLN":
+            pass
         elif line[0] == "LED_ON":
             print("LED_ON")
             android_api.LED_ON(self.led)
