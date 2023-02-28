@@ -4,6 +4,7 @@
 |        LED_ON              |          Hooray. Now it works with built-in LED                      |     ✅     |
 |        LED_OFF             |          Hooray. Now it works with built-in LED                      |     ✅     |
 |        LEDF_ON             |          Same as LED_ON/LED_OFF only with flashlight                 |     ✅     |
+|        IF_PLUGGED          |          Performs actions if a connection is found. Very useful for stealth attacks.|     ✅     |
 
 ## Basic
 |        Feature         |             Sub Feature              | Supported |                        Description                          |
