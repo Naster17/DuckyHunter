@@ -7,9 +7,13 @@
 |        LED_OFF             |          Hooray. Now it works with built-in LED                            |     ✅     |     Wiki    |
 |        LEDF_ON             |          Same as ```LED_ON/LED_OFF``` only with flashlight                 |     ✅     |     Wiki    |
 |        LEDF_OFF            |          Same as ```LED_ON/LED_OFF``` only with flashlight                 |     ✅     |     Wiki    |
-|        IF_PLUGGED          |Performs actions if a connection is found. Very useful for stealth attacks. |     ❌     |     Wiki    |
+|        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ❌     |     Wiki    |
 |        IF_UNPLUGGED        |          Good for post-execution scenarios with ```EXEC```                 |     ❌     |     Wiki    |
+<!-- Хорошо для атак в несколько етапов -->
+|        IF_VOLUME_UP        |      Waiting for volume-up button to be pressed on android to run a script |     ❌     |     Wiki    |
+|        IF_VOLUME_DOWN      |    Waiting for volume-down button to be pressed on android to run a script |     ❌     |     Wiki    | 
 |        EXEC                |          Executing commands in your shell. ```EXEC echo "wewe"```          |     ❌     |     Wiki    |
+|
 
 ## Basic
 |        Feature         |             Sub Feature              | Supported |                        Description                          |
