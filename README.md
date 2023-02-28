@@ -3,7 +3,7 @@
 ## Special Feature
 |        Command             |                      Description                                           | Supported  |     Wiki    |   
 |:--------------------------:|:--------------------------------------------------------------------------:|:----------:|:-----------:|
-|        LED_ON    LED_OFF   |          Turn ON/OFF built-in LED                                          |     ✅     |     Wiki    |
+|        LED_ON    LED_OFF   |          Turn ON/OFF built-in LED  aaaaaaaaa                               |     ✅     |     Wiki    |
 |        LEDF_ON   LEDF_OFF  |          Turn ON/OFF built-in flashlight                                   |     ✅     |     Wiki    |
 |        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ❌     |     Wiki    |
 |        IF_UNPLUGGED        |          Good for post-execution scenarios with ```EXEC```                 |     ❌     |     Wiki    |
