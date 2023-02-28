@@ -1,9 +1,9 @@
 ## Special Feature
-|        Command         |                      Description                            | Supported | 
-|:----------------------:|:-----------------------------------------------------------:|:---------:|
-|        LED_ON          |          Hooray. Now it works with built-in LED             |     ✅    |
-|        LED_OFF         |          Hooray. Now it works with built-in LED             |     ✅    |
-|        LEDF_ON         |          Same as LED_ON/LED_OFF only with flashlight        |     ✅    |
+|        Command             |                      Description                                     | Supported  | 
+|:--------------------------:|:--------------------------------------------------------------------:|:----------:|
+|        LED_ON              |          Hooray. Now it works with built-in LED                      |     ✅     |
+|        LED_OFF             |          Hooray. Now it works with built-in LED                      |     ✅     |
+|        LEDF_ON             |          Same as LED_ON/LED_OFF only with flashlight                 |     ✅     |
 
 ## Basic
 |        Feature         |             Sub Feature              | Supported |                        Description                          |
