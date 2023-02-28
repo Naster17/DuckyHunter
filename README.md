@@ -5,10 +5,8 @@
 |:--------------------------:|:--------------------------------------------------------------------:|:----------:|
 |        LED_ON              |          Hooray. Now it works with built-in LED                      |     ✅     |
 |        LED_OFF             |          Hooray. Now it works with built-in LED                      |     ✅     |
-||||
 |        LEDF_ON             |          Same as ```LED_ON/LED_OFF``` only with flashlight                 |     ✅     |
 |        LEDF_OFF            |          Same as ```LED_ON/LED_OFF``` only with flashlight                 |     ✅     |
-||||
 |        IF_PLUGGED          |Performs actions if a connection is found. Very useful for stealth attacks.|     ❌     |
 |        IF_UNPLUGGED        |          For post-execution scenarios with ```EXEC```                     |     ❌     |
 |        EXEC                |          Executing commands in your shell. ```EXEC echo "wewe"```         |     ❌     |
