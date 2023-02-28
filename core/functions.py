@@ -91,4 +91,66 @@ def STRINGLN(line, default_write_delay):
     print(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
     # os.popen(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
 
+def UP(line):
+    try:
+        if line[1] != None:
+            a = 0
+            line = int(line[1])
+            while True:
+                print(f'echo "up" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                # os.popen(f'echo "up" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                a += 1
+                if a == line:
+                    break
+     
+    except:
+        print(f'echo "up" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "up" | ./hid-keyboard {hid} {hid_type} > /dev/null')
 
+def DOWN(line):
+    try:
+        if line[1] != None:
+            a = 0
+            line = int(line[1])
+            while True:
+                print(f'echo "down" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                # os.popen(f'echo "down" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                a += 1
+                if a == line:
+                    break
+     
+    except:
+        print(f'echo "down" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "down" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+
+def LEFT(line):
+    try:
+        if line[1] != None:
+            a = 0
+            line = int(line[1])
+            while True:
+                print(f'echo "left" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                # os.popen(f'echo "left" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                a += 1
+                if a == line:
+                    break
+     
+    except:
+        print(f'echo "left" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "left" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+
+def RIGHT(line):
+    try:
+        if line[1] != None:
+            a = 0
+            line = int(line[1])
+            while True:
+                print(f'echo "right" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                # os.popen(f'echo "right" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                a += 1
+                if a == line:
+                    break
+     
+    except:
+        print(f'echo "right" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "right" | ./hid-keyboard {hid} {hid_type} > /dev/null')
