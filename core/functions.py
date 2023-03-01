@@ -86,10 +86,10 @@ def GUI(line):
     try:
         if line[1] != None:
             print(f'echo "left-meta {line[1]}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            # os.popen(f'echo "left-meta {line[1]}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "left-meta {line[1]}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
     except:
         print(f'echo "left-meta" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        # os.popen(f'echo "left-meta" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "left-meta" | ./hid-keyboard {hid} {hid_type} > /dev/null')
 
 def STRING(line, default_write_delay):
     line = " ".join(line[1:])
