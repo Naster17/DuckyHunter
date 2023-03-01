@@ -1,10 +1,14 @@
 # In developing. README.md may not keep up with updates
 
+## Demo video:
+Coming soon!
+
+
 ## Special Feature
 |        Command             |                      Description                                           | Supported  |     Wiki    |   
 |:--------------------------:|:--------------------------------------------------------------------------:|:----------:|:-----------:|
-|        LED_ON              |          Turn on built-in LED                                              |     ✅     |     Wiki    |
-|        LED_OFF             |          Turn off built-in LED                                             |     ✅     |     Wiki    |
+|        LED_ON              |          Turn on built-in LED                                              |     ✅     | DuckyHunter |
+|        LED_OFF             |          Turn off built-in LED                                             |     ✅     | DuckyHunter |
 |        LEDF_ON             |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
 |        LEDF_OFF            |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
 |        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ❌     |     Wiki    |
@@ -16,37 +20,26 @@
 <!-- IF_VOLUME_UP Хорошо для атак в несколько етапов -->
 
 ## Basic
-|        Feature         |             Sub Feature              | Supported |                        Description                          |
-|:----------------------:|:------------------------------------:|:---------:|:-----------------------------------------------------------:|
-|  Keystroke Injection   |     Character Keys: Alphanumeric     |     ✅    |                                                             |
-|  Keystroke Injection   |     Character Keys: Punctuation      |     ✅    |                                                             |
+|        Command             |                      Description                                           | Supported  |     Wiki    |   
+|:--------------------------:|:--------------------------------------------------------------------------:|:----------:|:-----------:|
+|         REM                |          A simple comment in a script                                      |     ✅     |     Hak5    |
+|         STRING             |          Keystroke injects (types) a series of keystrokes                  |     ✅     |     Hak5    |
+|         STRINGLN           |          Similar to a string but adds an enter at the end                  |     ✅     |     Hak5    |
+|         DELAY              |          momentarily pause execution of the payload.                       |     ✅     |     Hak5    |
+|         GUI                |          Keystrokes Windows/Meta/Command                                   |     ✅     |     Hak5    |
+|         ENTER              |          Pressing the Enter key.                                           |     ✅     |     Hak5    |
+|         UP/DOWN/LEFT/RIGHT |          Control keys up/down/right/left                                   |     ✅     |     Hak5    |
+
  
 
 
 
 
 ## Localization
-| Status |   Code    |        Language         |
+| Status |   Code    |        Layout           |
 |:------:|:---------:|:-----------------------:|
-|   ✅    |   us   |         United State           
+|   ✅   |    us     | (English) United State  |
 
 
----
-
-# Featuring Rucky
-- [Kali Linux 2019.3 Release](https://www.kali.org/blog/kali-linux-2019-3-release/)
-- [Kali Linux 2021.1 Release](https://www.kali.org/blog/kali-linux-2021-1-release/)
-- [Prog.World](https://prog.world/kali-linux-nethunter-on-android-part-3-breaking-the-distance/)
-- [ProgrammerSought](https://www.programmersought.com/article/30497171179/)
-- [Dark_Mechanic YouTube Channel](https://youtu.be/ic-X-FCLNk8)
-- [AV SHIVA NORO YouTube Channel](https://youtu.be/4clbu41cEQ0)
-- [Android Infosec YouTube Channel](https://www.youtube.com/watch?v=_NDXzGPh_BQ)
-- [Android Infosec Facebook Post](https://www.facebook.com/AndroidInfoSec/posts/4101537619869708)
-
----
-
-# Legacy Work
-[![RPi](https://img.shields.io/badge/Raspberry%20Pi-0%20W-maroon)](https://github.com/mayankmetha/Rucky-Ext-RPi)
-[![HID](https://img.shields.io/badge/Project-Legacy%20HID-lightgreen)](https://github.com/mayankmetha/Rucky-Legacy-HID)
-[![Android](https://img.shields.io/badge/android-4.4.x-green)](https://github.com/mayankmetha/Rucky/releases/tag/1.9)
-[![Android](https://img.shields.io/badge/android-5.x-green)](https://github.com/mayankmetha/Rucky/releases/tag/1.9)
+## Tutorial Video:
+Coming soon!
