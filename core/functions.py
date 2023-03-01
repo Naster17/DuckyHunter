@@ -1,34 +1,58 @@
 import os
 import core
 import time
+import json
 from config import *
 
 
 def Convert(letter):
-    letter = str(letter)
     with open('layouts/us.json') as f:
         data = json.load(f)
+        
         symbols = data["SYMBOLS"]
         special = data["SPECIAL"]
         universal = data["UNIVERSAL"]
 
-        if letter in symbols:
-            value = symbols[letter]
-            return value
-        elif letter in special:
-            value = special[letter]
-            return value
-        elif letter in universal:
-            value = universal
-            return value
+        if type(letter) == str:
+            if letter in symbols:
+                return symbols[letter]
+                
+            elif letter in special:
+                return special[letter]
+     
+            elif letter in universal:
+                return letter
+
+        elif type(letter) == list:
+            values = []
+            for lett in letter:
+                if lett in symbols:
+                    values.append(symbols[lett])
+     
+                elif lett in special:
+                    values.append(special[lett])
+        
+                elif lett in universal:
+                    values.append(lett)
+                
+                    
+            return values
+
+        f.close()
 
 
 def UNIVERSAL(line):
     low_line = str(line[0]).lower()
+    wewe = []
 
-    if len(line) >= 2:
+    convert = Convert(line)
+
+    if len(convert) >= 2:
+        print(f'echo "{" ".join(convert).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "{" ".join(convert).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+    elif len(line) >= 2:
         print(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        # os.popen(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "{" ".join(convert).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
     else:
         print(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
         # os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')    

@@ -31,7 +31,11 @@ Coming soon!
 |         ENTER              |          Pressing the Enter key.                                           |     ✅     |     Hak5    |
 |         UP/DOWN/LEFT/RIGHT |          Control keys up/down/right/left or UPARROW DOWNARROW ...          |     ✅     |     Hak5    |
  
+## Combinations
 
+```CTRL ,```
+```CTRL ALT DELETE```
+```UP DOWN```
 
 
 
