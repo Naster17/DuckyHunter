@@ -29,7 +29,7 @@ Coming soon!
 |         GUI                |          Keystrokes Windows/Meta/Command                                   |     ✅     |     Hak5    |
 |         ENTER              |          Pressing the Enter key.                                           |     ✅     |     Hak5    |
 |         UP/DOWN/LEFT/RIGHT |          Control keys up/down/right/left                                   |     ✅     |     Hak5    |
-
+|UPARROW/DOWNARROW/LEFTARROW/RIGHTARROW |          As well as up/down/left/right                          |     ✅     |     Hak5    |
  
 
 
