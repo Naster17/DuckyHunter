@@ -48,14 +48,14 @@ def UNIVERSAL(line):
     convert = Convert(line)
 
     if len(convert) >= 2:
-        print(f'echo "{" ".join(convert).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{" ".join(convert).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        print(f'echo "{" ".join(convert).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "{" ".join(convert).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     elif len(line) >= 2:
-        print(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        print(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     else:
-        print(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')    
+        print(f'echo "{low_line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "{low_line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')    
 
      
 
@@ -73,8 +73,8 @@ def REM(line):
     print("### " + " ".join(line[1:]) + " ###")
 
 def ENTER():
-    print(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-    os.popen(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+    print(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+    os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     
 
 def DELAY(line):
@@ -85,30 +85,31 @@ def DELAY(line):
 def GUI(line):
     try:
         if line[1] != None:
-            print(f'echo "left-meta {line[1]}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-meta {line[1]}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            print(f'echo "left-meta {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "left-meta {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     except:
-        print(f'echo "left-meta" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "left-meta" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        print(f'echo "left-meta" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "left-meta" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 def STRING(line, default_write_delay):
     line = " ".join(line[1:])
     for letter in line:
         time.sleep(default_write_delay)
+        
 
         if letter.isupper():
-            print(f'echo "left-shift {letter.lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-shift {letter.lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            print(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.islower():
-            print(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            print(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.isnumeric():
-            print(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            print(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         else:
             symbol = Convert(letter)
-            print(f'echo "{symbol}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{symbol}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+            print(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 def STRINGLN(line, default_write_delay):
     line = " ".join(line[1:])
@@ -117,24 +118,24 @@ def STRINGLN(line, default_write_delay):
         
         if letter.isupper():
             print(
-                f'echo "left-shift {letter.lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-shift {letter.lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.islower():
             print(
-                f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.isnumeric():
             print(
-                f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         else:
             symbol = Convert(letter)
             print(
-                f'echo "{symbol}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{symbol}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
-    print(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-    os.popen(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+    print(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+    os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 def ONLY_ARROW(line):
 
@@ -152,17 +153,17 @@ def ONLY_ARROW(line):
             a = 0
             line = int(line[1])
             while True:
-                print(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-                os.popen(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+                print(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+                os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
                 a += 1
                 if a == line:
                     break
      
     except:
-        print(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        print(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 
 def PRINTSCREEN():
-   print(f'echo "print" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-   os.popen(f'echo "print" | ./hid-keyboard {hid} {hid_type} > /dev/null') 
+   print(f'echo "print" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+   os.popen(f'echo "print" | ./{path_to_hid} {hid} {hid_type} > /dev/null') 
