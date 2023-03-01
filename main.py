@@ -6,6 +6,8 @@ from core.executer import Core
 from config import *
 from core.compiler import compil
 
+compil()
+
 print("""       ,~~.
       (  6 )-_,
  (\___ )=='-'
@@ -19,8 +21,6 @@ parser.add_argument('--file', type=str, help='Path to script')
 
 args = parser.parse_args()
 
-# Simple compiler
-compil()
 
 
 hid = Core()
