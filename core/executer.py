@@ -72,6 +72,9 @@ class Core:
             elif line[0] in self.universal_keys:
                 cmd.UNIVERSAL(line)
 
+            elif line[0] == "PRINTSCREEN":
+                cmd.PRINTSCREEN()
+
             else:
                 print(f"Unsupported command while: {' '.join(line)}")
 

@@ -30,7 +30,8 @@ struct options {
   unsigned char val;
 };
 
-static struct options kmod[] = {{.opt = "left-ctrl", .val = 0x01},
+static struct options kmod[] = {
+                                {.opt = "left-ctrl", .val = 0x01},
                                 {.opt = "right-ctrl", .val = 0x10},
                                 {.opt = "left-shift", .val = 0x02},
                                 {.opt = "right-shift", .val = 0x20},
@@ -38,6 +39,11 @@ static struct options kmod[] = {{.opt = "left-ctrl", .val = 0x01},
                                 {.opt = "right-alt", .val = 0x40},
                                 {.opt = "left-meta", .val = 0x08},
                                 {.opt = "right-meta", .val = 0x80},
+                                {.opt = "SHIFT", .val = 0x02},
+                                {.opt = "ALT", .val = 0x04},
+                                {.opt = "GUI", .val = 0x08},
+                                {.opt = "CONTROL", .val = 0x01},
+                                {.opt = "CTRL", .val = 0x01},
                                 {.opt = NULL}};
 
 static struct options kval[] = {
@@ -117,6 +123,7 @@ static struct options kval[] = {
     {.opt = "f11", .val = 0x44},
     {.opt = "f12", .val = 0x45},
     {.opt = "print", .val = 0x46},
+    {.opt = "printscreen", .val = 0x46},
     {.opt = "scroll-lock", .val = 0x47},
     {.opt = "scrolllock", .val = 0x47},
     {.opt = "scrollock", .val = 0x47},

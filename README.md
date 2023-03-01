@@ -1,4 +1,5 @@
 # In developing. README.md may not keep up with updates
+DEBUG MODE.
 
 ## Demo video:
 Coming soon!

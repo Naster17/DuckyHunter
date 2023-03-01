@@ -37,6 +37,8 @@ def UNIVERSAL(line):
         # os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
 
 
+def MODIFIER(line):
+    pass
 
 def DEFAULTDELAY(line):
     print(f"DEFAULTDELAY: {line[1]}")
@@ -111,6 +113,7 @@ def STRINGLN(line, default_write_delay):
     # os.popen(f'echo "enter" | ./hid-keyboard {hid} {hid_type} > /dev/null')
 
 def ONLY_ARROW(line):
+
     if line[0] == "UPARROW":
         line = "up"
     elif line[0] == "DOWNARROW":
@@ -134,3 +137,8 @@ def ONLY_ARROW(line):
     except:
         print(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
         # os.popen(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+
+
+def PRINTSCREEN():
+   print(f'echo "print" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+    # os.popen(f'echo "{line}" | ./hid-keyboard {hid} {hid_type} > /dev/null') 
