@@ -15,6 +15,9 @@ class Core:
         # DELAY times
         self.default_delay = default_delay
         self.default_write_delay = default_write_delay
+        self.universal_keys = ["UP", "DOWN", "LEFT", "RIGHT", "ENTER", "CAPSLOCK", "PAGEUP", "PAGEDOWN", "DELETE", "END", "HOME"
+                                "INSERT", "NUMLOCK", "SCROLLOCK","SCROLLOCK", "SPACE", "TAB",
+                                 "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]
 
     def Analyzer(self, file):
         with open(file) as f:
@@ -37,9 +40,6 @@ class Core:
 
             elif line[0] == "DELAY":
                 cmd.DELAY(line)
-
-            elif line[0] == "ENTER":
-                cmd.ENTER()
 
             elif line[0] == "GUI":
                 cmd.GUI(line)
@@ -65,17 +65,12 @@ class Core:
                 print("LEDF_OFF")
                 android_api.LEDF_OFF(self.ledf)
 
-            elif line[0] in ["UP", "UPARROW"]:
-                cmd.UP(line)
             
-            elif line[0] in ["DOWN", "DOWNARROW"]:
-                cmd.DOWN(line)
+            elif line[0] in ["UPARROW", "DOWNARROW", "LEFTARROW", "RIGHTARROW"]:
+                cmd.ONLY_ARROW(line)
             
-            elif line[0] in ["LEFT", "LEFTARROW"]:
-                cmd.LEFT(line)
-            
-            elif line[0] in ["RIGHT", "RIGHTARROW"]:
-                cmd.RIGHT(line)
+            elif line[0] in self.universal_keys:
+                cmd.UNIVERSAL(line)
 
             else:
                 print(f"Unsupported command while: {' '.join(line)}")
