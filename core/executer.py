@@ -12,11 +12,10 @@ class Core:
         self.ledf = ledf
         self.hid = hid
         self.hid_type = hid_type
-        # DELAY times
         self.default_delay = default_delay
         self.default_write_delay = default_write_delay
-        self.universal_keys = ["UP", "DOWN", "LEFT", "RIGHT", "ENTER", "CAPSLOCK", "PAGEUP", "PAGEDOWN", "DELETE", "END", "HOME"
-                                "INSERT", "NUMLOCK", "SCROLLOCK","SCROLLOCK", "SPACE", "TAB",
+        self.universal_keys = ["UP", "DOWN", "LEFT", "RIGHT", "ENTER", "CAPSLOCK", "PAGEUP", "PAGEDOWN", "DELETE", "END", "HOME",
+                                "INSERT", "NUMLOCK", "SCROLLOCK","SCROLLOCK", "SPACE", "TAB", "PRINTSCREEN", "SHIFT", "ALT", "CTRL",
                                  "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]
 
     def Analyzer(self, file):
@@ -72,11 +71,9 @@ class Core:
             elif line[0] in self.universal_keys:
                 cmd.UNIVERSAL(line)
 
-            elif line[0] == "PRINTSCREEN":
-                cmd.PRINTSCREEN()
 
             else:
-                print(f"Unsupported command while: {' '.join(line)}")
+                print(f"Unsupported command while: {' '.join(line)}, {line}")
 
         except IndexError:
             # In case there are empty lines in the script

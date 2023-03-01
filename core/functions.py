@@ -10,6 +10,7 @@ def Convert(letter):
         data = json.load(f)
         symbols = data["SYMBOLS"]
         special = data["SPECIAL"]
+        universal = data["UNIVERSAL"]
 
         if letter in symbols:
             value = symbols[letter]
@@ -17,28 +18,27 @@ def Convert(letter):
         elif letter in special:
             value = special[letter]
             return value
+        elif letter in universal:
+            value = universal
+            return value
 
 
 def UNIVERSAL(line):
     low_line = str(line[0]).lower()
-    try:
-        if line[1] != None:
-            a = 0
-            line = int(line[1])
-            while True:
-                print(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-                # os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-                a += 1
-                if a == line:
-                    break
-     
-    except:
+
+    if len(line) >= 2:
+        print(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "{" ".join(line).lower()}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+    else:
         print(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
-        # os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "{low_line}" | ./hid-keyboard {hid} {hid_type} > /dev/null')    
+
+     
+
 
 
 def MODIFIER(line):
-    pass
+    print(line)
 
 def DEFAULTDELAY(line):
     print(f"DEFAULTDELAY: {line[1]}")

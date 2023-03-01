@@ -39,11 +39,11 @@ static struct options kmod[] = {
                                 {.opt = "right-alt", .val = 0x40},
                                 {.opt = "left-meta", .val = 0x08},
                                 {.opt = "right-meta", .val = 0x80},
-                                {.opt = "SHIFT", .val = 0x02},
-                                {.opt = "ALT", .val = 0x04},
-                                {.opt = "GUI", .val = 0x08},
-                                {.opt = "CONTROL", .val = 0x01},
-                                {.opt = "CTRL", .val = 0x01},
+                                {.opt = "shift", .val = 0x02},
+                                {.opt = "alt", .val = 0x04},
+                                {.opt = "gui", .val = 0x08},
+                                {.opt = "control", .val = 0x01},
+                                {.opt = "ctrl", .val = 0x01},
                                 {.opt = NULL}};
 
 static struct options kval[] = {

@@ -8,8 +8,8 @@ Coming soon!
 ## Special Feature
 |        Command             |                      Description                                           | Supported  |     Wiki    |   
 |:--------------------------:|:--------------------------------------------------------------------------:|:----------:|:-----------:|
-|        LED_ON              |          Turn on built-in LED                                              |     ✅     | DuckyHunter |
-|        LED_OFF             |          Turn off built-in LED                                             |     ✅     | DuckyHunter |
+|        LED_ON              |          Turn on built-in LED                                              |     ✅     |     Wiki    |
+|        LED_OFF             |          Turn off built-in LED                                             |     ✅     |     Wiki    |
 |        LEDF_ON             |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
 |        LEDF_OFF            |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
 |        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ❌     |     Wiki    |
