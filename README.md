@@ -12,7 +12,7 @@ Coming soon!
 |        LED_OFF             |          Turn off built-in LED                                             |     ✅     |     Wiki    |
 |        LEDF_ON             |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
 |        LEDF_OFF            |          Same as ```LED_ON/LED_OFF``` but with flashlight                  |     ✅     |     Wiki    |
-|        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ❌     |     Wiki    |
+|        IF_PLUGGED          |      Waiting for a connection to the device to execute the script          |     ✅     |     Wiki    |
 |        IF_UNPLUGGED        |          Good for post-execution scenarios with ```EXEC```                 |     ❌     |     Wiki    |
 |        IF_VOLUME_UP        |      Waiting for volume-up button to be pressed on android to run a script |     ❌     |     Wiki    |
 |        IF_VOLUME_DOWN      |    Waiting for volume-down button to be pressed on android to run a script |     ❌     |     Wiki    | 

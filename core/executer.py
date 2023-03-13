@@ -51,18 +51,21 @@ class Core:
 
             elif line[0] == "LED_ON":
                 print("LED_ON")
-                android_api.LED_ON(self.led)
+                android_api.LED_ON()
 
             elif line[0] == "LED_OFF":
                 print("LED_OFF")
-                android_api.LED_OFF(self.led)
+                android_api.LED_OFF()
 
             elif line[0] == "LEDF_ON":
                 print("LEDF_ON")
-                android_api.LEDF_ON(self.ledf)
+                android_api.LEDF_ON()
             elif line[0] == "LEDF_OFF":
                 print("LEDF_OFF")
-                android_api.LEDF_OFF(self.ledf)
+                android_api.LEDF_OFF()
+            
+            elif line[0] == "IF_PLUGGED":
+                android_api.IF_PLUGGED()
 
             
             elif line[0] in ["UPARROW", "DOWNARROW", "LEFTARROW", "RIGHTARROW"]:

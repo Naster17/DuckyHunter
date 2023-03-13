@@ -1,4 +1,11 @@
-REM Author weweboy
+REM Author Naster
 DEFAULTDELAY 100
+IF_PLUGGED
 LED_ON
+DELAY 1000
+CTRL ALT T
+DELAY 500
+STRINGLN firefox https://google.com/
+REM Victory!
+DELAY 100
 LED_OFF
