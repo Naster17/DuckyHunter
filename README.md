@@ -1,6 +1,6 @@
 # DuckyHunter
 Powerful tool for HID attacks from your Android. With completely new features. 
-# In developing. README.md may not keep up with updates
+# In developing. README.md may not keep up with updates. Check the beta brench!
 DEBUG MODE.
 
 ## Demo video:
