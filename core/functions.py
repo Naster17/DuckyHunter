@@ -4,7 +4,6 @@ import time
 import json
 from config import *
 
-# TODO wtf whas that?
 def Convert(letter):
     with open('layouts/us.json') as f:
         data = json.load(f)
@@ -19,12 +18,7 @@ def Convert(letter):
             elif letter in special:
                 return special[letter]
      
-            elif letter in universal:
-                return letter
 
-                
-                    
-            return values
 
         f.close()
 
