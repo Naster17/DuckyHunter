@@ -8,15 +8,12 @@ from config import *
 
 class Core:
     def __init__(self):
-        self.led = led
-        self.ledf = ledf
-        self.hid = hid
-        self.hid_type = hid_type
-        self.default_delay = default_delay
-        self.default_write_delay = default_write_delay
-        self.universal_keys = ["UP", "DOWN", "LEFT", "RIGHT", "ENTER", "CAPSLOCK", "PAGEUP", "PAGEDOWN", "DELETE", "END", "HOME",
-                                "INSERT", "NUMLOCK", "SCROLLOCK","SCROLLOCK", "SPACE", "TAB", "PRINTSCREEN", "SHIFT", "ALT", "CTRL",
-                                 "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]
+        self.universal_keys = ["UP", "DOWN", "LEFT", "RIGHT", "ENTER",
+                               "PAGEUP", "PAGEDOWN", "END", "HOME",
+                               "ESC", "INSERT", "SPACE", "TAB", "PRINTSCREEN", "SHIFT", "ALT", "CTRL", "BACKSPACE","DELETE",
+                               "NUMLOCK", "SCROLLOCK","SCROLLLOCK", "CAPSLOCK",
+                               "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]
+        
 
     def Analyzer(self, file):
         with open(file) as f:
@@ -29,7 +26,7 @@ class Core:
                 #     pass
 
     def Executer(self, line):
-        time.sleep(self.default_delay)
+        time.sleep(default_delay)
         try:
             if line[0] in ["DEFAULTDELAY", "DEFAULT_DELAY"]:
                 self.default_delay = cmd.DEFAULTDELAY(line)
@@ -44,10 +41,10 @@ class Core:
                 cmd.GUI(line)
 
             elif line[0] == "STRING":
-                cmd.STRING(line, self.default_write_delay)
+                cmd.STRING(line)
 
             elif line[0] == "STRINGLN":
-                cmd.STRINGLN(line, self.default_write_delay)
+                cmd.STRINGLN(line)
 
             elif line[0] == "LED_ON":
                 print("LED_ON")
@@ -66,6 +63,9 @@ class Core:
             
             elif line[0] == "IF_PLUGGED":
                 android_api.IF_PLUGGED()
+            
+            elif line[0] == "IF_UNPLUGGED":
+                android_api.IF_UNPLUGGED()
 
             
             elif line[0] in ["UPARROW", "DOWNARROW", "LEFTARROW", "RIGHTARROW"]:
@@ -73,6 +73,7 @@ class Core:
             
             elif line[0] in self.universal_keys:
                 cmd.UNIVERSAL(line)
+
 
 
             else:

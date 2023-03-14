@@ -24,10 +24,10 @@ args = parser.parse_args()
 
 
 hid = Core()
-try:
-    hid.Analyzer(args.file)
-except TypeError:
-    print("usage: main.py [-h] [--file FILE]")
-except FileNotFoundError:
-    print("\nQUACK!!! ")
-    print(f"File {args.file} not found")
+# try:
+hid.Analyzer(args.file)
+# except TypeError:
+#     print("usage: main.py [-h] [--file FILE]")
+# except FileNotFoundError:
+#     print("\nQUACK!!! ")
+#     print(f"File {args.file} not found")

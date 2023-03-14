@@ -24,13 +24,20 @@ def LEDF_OFF():
 
 
 def IF_PLUGGED():
-    print("Waiting connection...")
     while 1:
         status = os.popen(f"cat {usb}").read().strip()
 
         if status == "1":
-            print("Connected...")
             break
         elif status == "0":
             time.sleep(check_sleep_time)
         
+
+def IF_UNPLUGGED():
+    while 1:
+        status = os.popen(f"cat {usb}").read().strip()
+
+        if status == "0":
+            break
+        elif status == "1":
+            time.sleep(check_sleep_time)

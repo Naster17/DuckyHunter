@@ -35,41 +35,5 @@
     "*": "kp-multiply"
   },
 
-  "SPECIAL": {},
-
-  "UNIVERSAL": [
-    "UP",
-    "DOWN",
-    "LEFT",
-    "RIGHT",
-    "ENTER",
-    "CAPSLOCK",
-    "PAGEUP",
-    "PAGEDOWN",
-    "DELETE",
-    "END",
-    "HOME",
-    "INSERT",
-    "NUMLOCK",
-    "SCROLLOCK",
-    "SCROLLOCK",
-    "SPACE",
-    "TAB",
-    "PRINTSCREEN",
-    "SHIFT",
-    "ALT",
-    "CTRL",
-    "F1",
-    "F2",
-    "F3",
-    "F4",
-    "F5",
-    "F6",
-    "F7",
-    "F8",
-    "F9",
-    "F10",
-    "F11",
-    "F12"
-  ]
+  "SPECIAL": {}
 }

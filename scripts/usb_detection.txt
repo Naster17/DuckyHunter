@@ -1,0 +1,7 @@
+REM This is a demo of the work IF_PLUGGED, IF_UNPLUGGED
+
+IF_PLUGGED
+REM ...USB connected...
+REM For example you can use LED_ON
+IF_UNPLUGGED 
+REM ...USB disconnted...

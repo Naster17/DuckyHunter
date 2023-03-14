@@ -11,7 +11,6 @@ def Convert(letter):
         
         symbols = data["SYMBOLS"]
         special = data["SPECIAL"]
-        universal = data["UNIVERSAL"]
 
         if type(letter) == str:
             if letter in symbols:
@@ -23,17 +22,6 @@ def Convert(letter):
             elif letter in universal:
                 return letter
 
-        elif type(letter) == list:
-            values = []
-            for lett in letter:
-                if lett in symbols:
-                    values.append(symbols[lett])
-     
-                elif lett in special:
-                    values.append(special[lett])
-        
-                elif lett in universal:
-                    values.append(lett)
                 
                     
             return values
@@ -42,20 +30,10 @@ def Convert(letter):
 
 
 def UNIVERSAL(line):
-    low_line = str(line[0]).lower()
-    wewe = []
 
-    convert = Convert(line)
-
-    if len(convert) >= 2:
-        print(f'echo "{" ".join(convert).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{" ".join(convert).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-    elif len(line) >= 2:
-        print(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-    else:
-        print(f'echo "{low_line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{low_line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')    
+    print(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+    # os.popen(f'echo "{" ".join(line).lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+ 
 
      
 
@@ -72,7 +50,7 @@ def REM(line):
 
 def ENTER():
     print(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-    os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+    # os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     
 
 def DELAY(line):
@@ -83,13 +61,13 @@ def DELAY(line):
 def GUI(line):
     try:
         if line[1] != None:
-            print(f'echo "left-meta {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-meta {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            print(f'echo "gui {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "gui {line[1]}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
     except:
-        print(f'echo "left-meta" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "left-meta" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        print(f'echo "gui" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "gui" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
-def STRING(line, default_write_delay):
+def STRING(line):
     line = " ".join(line[1:])
     for letter in line:
         time.sleep(default_write_delay)
@@ -97,19 +75,19 @@ def STRING(line, default_write_delay):
 
         if letter.isupper():
             print(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.islower():
             print(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.isnumeric():
             print(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         else:
             symbol = Convert(letter)
             print(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
-def STRINGLN(line, default_write_delay):
+def STRINGLN(line):
     line = " ".join(line[1:])
     for letter in line:
         time.sleep(default_write_delay)
@@ -117,23 +95,23 @@ def STRINGLN(line, default_write_delay):
         if letter.isupper():
             print(
                 f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "left-shift {letter.lower()}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.islower():
             print(
                 f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         elif letter.isnumeric():
             print(
                 f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{letter}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
         else:
             symbol = Convert(letter)
             print(
                 f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-            os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+            # os.popen(f'echo "{symbol}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
     print(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-    os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+    # os.popen(f'echo "enter" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 def ONLY_ARROW(line):
 
@@ -152,16 +130,16 @@ def ONLY_ARROW(line):
             line = int(line[1])
             while True:
                 print(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-                os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+                # os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
                 a += 1
                 if a == line:
                     break
      
     except:
         print(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-        os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
+        # os.popen(f'echo "{line}" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
 
 
 def PRINTSCREEN():
     print(f'echo "print" | ./{path_to_hid} {hid} {hid_type} > /dev/null')
-    os.popen(f'echo "print" | ./{path_to_hid} {hid} {hid_type} > /dev/null') 
+    # os.popen(f'echo "print" | ./{path_to_hid} {hid} {hid_type} > /dev/null') 
